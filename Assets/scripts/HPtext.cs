@@ -14,36 +14,36 @@ public class HPtext : MonoBehaviour
     private int _maxHealth = 100;
     private int _minHealth = 0;
     private int _changeValue = 10;
-    private ChangeColor _changeColor;
 
     public void GetHeal()
     {
         _currentHealth += _changeValue;
-        _changeColor.GetHeal();
 
         if (_currentHealth > _maxHealth)
         {
             _currentHealth = _maxHealth;
         }
+
+        UpdateText();
     }
     public void GetDamage()
     {
         _currentHealth -= _changeValue;
-        _changeColor.GetDamage();
 
         if (_currentHealth < _minHealth)
         {
             _currentHealth = _minHealth;
         }
+
+        UpdateText();
     }
-    public void UpdateText()
+    private void UpdateText()
     {
         _tmpText.text = ($"{_currentHealth}/{_maxHealth}");
     }
 
     private void Start()
     {
-        _changeColor = GetComponent<ChangeColor>();
-        _tmpText.text = ($"{_currentHealth}/{_maxHealth}");
+        UpdateText();
     }
 }

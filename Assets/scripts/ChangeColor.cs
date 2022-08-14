@@ -16,21 +16,16 @@ public class ChangeColor : MonoBehaviour
 
     public void GetHeal()
     {
-        while(_slider.value < _hpText._currentHealth)
-        {
-            _image.color = _healColor;
-        }
-
-        _image.color = _currentColor;
+        _image.color = _healColor;
     }
 
     public void GetDamage()
     {
-        while (_slider.value > _hpText._currentHealth)
-        {
-            _image.color = _damageColor;
-        }
+        _image.color = _damageColor;
+    }
 
+    public void ReturnColor()
+    {
         _image.color = _currentColor;
     }
 
