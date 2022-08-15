@@ -12,6 +12,14 @@ public class Healthbar : MonoBehaviour
     private int _recoveryRate = 5;
     private ChangeColor _changeColor;
 
+    private void Start()
+    {
+        _hpText = GetComponent<HPtext>();
+        _slider = GetComponent<Slider>();
+        _changeColor = GetComponent<ChangeColor>();
+        _slider.value = _hpText._currentHealth;
+    }
+
     public void Update()
     {
         _slider.value = Mathf.MoveTowards(_slider.value, _hpText._currentHealth, _recoveryRate * Time.deltaTime);
@@ -29,13 +37,5 @@ public class Healthbar : MonoBehaviour
         {
             _changeColor.ReturnColor();
         }
-    }
-
-    private void Start()
-    {
-        _hpText = GetComponent<HPtext>();
-        _slider = GetComponent<Slider>();
-        _changeColor = GetComponent<ChangeColor>();
-        _slider.value = _hpText._currentHealth;
     }
 }

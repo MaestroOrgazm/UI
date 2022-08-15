@@ -6,22 +6,22 @@ using UnityEngine.UI;
 
 public class ButtonAnimation : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
-    private RectTransform _rTransform;
+    private RectTransform _rectTransform;
     private Vector3 _defaultScale;
     private Vector3 _enter = new Vector3(0.9f, 0.9f, 0.9f);
 
     private void Start()
     {
-        _rTransform = GetComponent<RectTransform>();
-        _defaultScale = _rTransform.localScale;
+        _rectTransform = GetComponent<RectTransform>();
+        _defaultScale = _rectTransform.localScale;
     }
     public void OnPointerEnter(PointerEventData eventData)
     {
-        _rTransform.localScale = _enter;
+        _rectTransform.localScale = _enter;
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        _rTransform.localScale = _defaultScale;
+        _rectTransform.localScale = _defaultScale;
     }
 }

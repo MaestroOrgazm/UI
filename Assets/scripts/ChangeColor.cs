@@ -8,11 +8,15 @@ public class ChangeColor : MonoBehaviour
     [SerializeField] private GameObject _fill;
 
     private Color _currentColor;
-    private HPtext _hpText;
-    private Slider _slider;
     private Color _healColor = Color.green;
     private Color _damageColor = Color.red;
     private Image _image;
+
+    private void Start()
+    {
+        _image = _fill.GetComponent<Image>();
+        _currentColor = _image.color;
+    }
 
     public void GetHeal()
     {
@@ -27,13 +31,5 @@ public class ChangeColor : MonoBehaviour
     public void ReturnColor()
     {
         _image.color = _currentColor;
-    }
-
-    private void Start()
-    {
-        _hpText = GetComponent<HPtext>();
-        _slider = GetComponent<Slider>();
-        _image = _fill.GetComponent<Image>();
-        _currentColor = _image.color;
     }
 }

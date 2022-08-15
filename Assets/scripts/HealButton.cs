@@ -12,13 +12,13 @@ public class HealButton : MonoBehaviour
 
     private HPtext _hpText;
 
-    public void OnButtonClick()
-    {
-        _hpText.GetHeal();
-    }
-
     private void Start()
     {
         _hpText = _slider.GetComponent<HPtext>();
+    }
+
+    public void OnButtonClick()
+    {
+        _hpText.GetHeal();
     }
 }

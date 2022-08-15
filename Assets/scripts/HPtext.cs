@@ -15,6 +15,11 @@ public class HPtext : MonoBehaviour
     private int _minHealth = 0;
     private int _changeValue = 10;
 
+    private void Start()
+    {
+        UpdateText();
+    }
+
     public void GetHeal()
     {
         _currentHealth += _changeValue;
@@ -37,13 +42,9 @@ public class HPtext : MonoBehaviour
 
         UpdateText();
     }
+
     private void UpdateText()
     {
         _tmpText.text = ($"{_currentHealth}/{_maxHealth}");
-    }
-
-    private void Start()
-    {
-        UpdateText();
     }
 }

@@ -14,13 +14,13 @@ public class DamageButton : MonoBehaviour
 
     private HPtext _hpText;
 
-    public void OnButtonClick()
-    {
-        _hpText.GetDamage();
-    }
-
     private void Start()
     {
         _hpText = _slider.GetComponent<HPtext>();
+    }
+
+    public void OnButtonClick()
+    {
+        _hpText.GetDamage();
     }
 }
