@@ -123,6 +123,50 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &231878236
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 231878238}
+  - component: {fileID: 231878237}
+  m_Layer: 0
+  m_Name: Player
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &231878237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 231878236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cef06d00d850264d99ef68da6287011, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &231878238
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 231878236}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 15.734397, y: 5.0097895, z: 0.071665205}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &416412336
 GameObject:
   m_ObjectHideFlags: 0
@@ -371,13 +415,11 @@ GameObject:
   - component: {fileID: 1516348461}
   - component: {fileID: 1516348460}
   - component: {fileID: 1516348459}
-  - component: {fileID: 1516348462}
   - component: {fileID: 1516348468}
   - component: {fileID: 1516348467}
   - component: {fileID: 1516348466}
   - component: {fileID: 1516348465}
   - component: {fileID: 1516348464}
-  - component: {fileID: 1516348463}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -471,32 +513,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!114 &1516348462
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1516348457}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a913d8a09d89d74f8b1ac14aa5b9c9d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _slider: {fileID: 1742821937}
---- !u!114 &1516348463
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1516348457}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc21465fb0d3db7448601aa1816c50e5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _slider: {fileID: 1742821937}
 --- !u!114 &1516348464
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -751,7 +767,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4715ec2c405427047a86180fe7c419a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _fillImage: {fileID: 8331581604927844068}
+  _player: {fileID: 231878236}
+  _tmpText: {fileID: 951600148}
+  _fillImage: {fileID: 8331581604927844070}
 --- !u!114 &1742821937 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8331581605500318924, guid: 42d8833330f13f543a951538b65c2c3d, type: 3}
@@ -763,24 +781,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1742821938
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1742821933}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1cef06d00d850264d99ef68da6287011, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _tmpText: {fileID: 951600148}
 --- !u!224 &1792341203 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4291245855149606967, guid: 3f57059ff89f6364089a554179884031, type: 3}
   m_PrefabInstance: {fileID: 4094138107127713275}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1792341204 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4150935334745177644, guid: 3f57059ff89f6364089a554179884031, type: 3}
+  m_PrefabInstance: {fileID: 4094138107127713275}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 375360f3ffee6b7498bc892adf54c8f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1843270371
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -789,6 +805,14 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 1516348458}
     m_Modifications:
+    - target: {fileID: 4150935334745177644, guid: 3f57059ff89f6364089a554179884031, type: 3}
+      propertyPath: _player
+      value: 
+      objectReference: {fileID: 231878236}
+    - target: {fileID: 4150935334745177644, guid: 3f57059ff89f6364089a554179884031, type: 3}
+      propertyPath: _slider
+      value: 
+      objectReference: {fileID: 1742821937}
     - target: {fileID: 4150935334745177644, guid: 3f57059ff89f6364089a554179884031, type: 3}
       propertyPath: _selectedColor.a
       value: 1
@@ -947,7 +971,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5162000687777399439, guid: 3f57059ff89f6364089a554179884031, type: 3}
       propertyPath: m_Name
-      value: Button (1)
+      value: Damage
       objectReference: {fileID: 0}
     - target: {fileID: 6573265596290635588, guid: 3f57059ff89f6364089a554179884031, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -960,18 +984,18 @@ PrefabInstance:
     - target: {fileID: 6573265596290635588, guid: 3f57059ff89f6364089a554179884031, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1516348463}
+      objectReference: {fileID: 1960209564}
     - target: {fileID: 6573265596290635588, guid: 3f57059ff89f6364089a554179884031, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6573265596290635588, guid: 3f57059ff89f6364089a554179884031, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnButtonClick
+      value: TakeDamage
       objectReference: {fileID: 0}
     - target: {fileID: 6573265596290635588, guid: 3f57059ff89f6364089a554179884031, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: DamageButton, Assembly-CSharp
+      value: Button, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6573265596290635588, guid: 3f57059ff89f6364089a554179884031, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
@@ -989,6 +1013,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4291245855149606967, guid: 3f57059ff89f6364089a554179884031, type: 3}
   m_PrefabInstance: {fileID: 1843270371}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1960209564 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4150935334745177644, guid: 3f57059ff89f6364089a554179884031, type: 3}
+  m_PrefabInstance: {fileID: 1843270371}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 375360f3ffee6b7498bc892adf54c8f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4094138107127713275
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -997,6 +1032,14 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 1516348458}
     m_Modifications:
+    - target: {fileID: 4150935334745177644, guid: 3f57059ff89f6364089a554179884031, type: 3}
+      propertyPath: _player
+      value: 
+      objectReference: {fileID: 231878236}
+    - target: {fileID: 4150935334745177644, guid: 3f57059ff89f6364089a554179884031, type: 3}
+      propertyPath: _slider
+      value: 
+      objectReference: {fileID: 1742821937}
     - target: {fileID: 4150935334745177644, guid: 3f57059ff89f6364089a554179884031, type: 3}
       propertyPath: _selectedColor.a
       value: 1
@@ -1151,19 +1194,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5162000687777399439, guid: 3f57059ff89f6364089a554179884031, type: 3}
       propertyPath: m_Name
-      value: Button
+      value: Heal
       objectReference: {fileID: 0}
     - target: {fileID: 6573265596290635588, guid: 3f57059ff89f6364089a554179884031, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1516348462}
+      objectReference: {fileID: 1792341204}
     - target: {fileID: 6573265596290635588, guid: 3f57059ff89f6364089a554179884031, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnButtonClick
+      value: TakeHeal
       objectReference: {fileID: 0}
     - target: {fileID: 6573265596290635588, guid: 3f57059ff89f6364089a554179884031, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: HealButton, Assembly-CSharp
+      value: Button, Assembly-CSharp
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -1335,7 +1378,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 42d8833330f13f543a951538b65c2c3d, type: 3}
---- !u!114 &8331581604927844068 stripped
+--- !u!114 &8331581604927844070 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8331581604594279970, guid: 42d8833330f13f543a951538b65c2c3d, type: 3}
   m_PrefabInstance: {fileID: 8331581604927844067}
