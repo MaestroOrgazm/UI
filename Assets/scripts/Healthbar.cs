@@ -1,41 +1,45 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
-[RequireComponent(typeof(ChangeColor))]
+using System.Collections;
 
 public class Healthbar : MonoBehaviour
 {
-    private HPtext _hpText;
+    [SerializeField] private Image _fillImage;
+
+    private Color _currentColor;
+    private Color _healColor = Color.green;
+    private Color _damageColor = Color.red;
+    private Health _health;
     private Slider _slider;
-    private int _recoveryRate = 5;
-    private ChangeColor _changeColor;
+    private int _recoveryRate = 7;
 
     private void Start()
     {
-        _hpText = GetComponent<HPtext>();
+        _health = GetComponent<Health>();
         _slider = GetComponent<Slider>();
-        _changeColor = GetComponent<ChangeColor>();
-        _slider.value = _hpText._currentHealth;
+        _slider.value = _health._currentHealth;
+        _currentColor = _fillImage.color;
     }
 
-    public void Update()
+    public IEnumerator UpdateBar()
     {
-        _slider.value = Mathf.MoveTowards(_slider.value, _hpText._currentHealth, _recoveryRate * Time.deltaTime);
+        while (_slider.value != _health._currentHealth)
+        {
+            _slider.value = Mathf.MoveTowards(_slider.value, _health._currentHealth, _recoveryRate * Time.deltaTime);
 
 
-        if (_slider.value > _hpText._currentHealth)
-        {
-            _changeColor.GetDamage();
+            if (_slider.value > _health._currentHealth)
+            {
+                _fillImage.color = _damageColor;
+            }
+            else if (_slider.value < _health._currentHealth)
+            {
+                _fillImage.color = _healColor;
+            }
+
+            yield return new WaitForEndOfFrame();
         }
-        else if (_slider.value < _hpText._currentHealth)
-        {
-            _changeColor.GetHeal();
-        }
-        else
-        {
-            _changeColor.ReturnColor();
-        }
+
+        _fillImage.color = _currentColor;
     }
 }

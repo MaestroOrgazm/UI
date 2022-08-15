@@ -1,12 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
+using System.Collections;
 
 [RequireComponent(typeof(TMP_Text))]
 
-public class HPtext : MonoBehaviour
+public class Health : MonoBehaviour
 {
     [SerializeField] private TMP_Text _tmpText;
 
@@ -14,9 +12,12 @@ public class HPtext : MonoBehaviour
     private int _maxHealth = 100;
     private int _minHealth = 0;
     private int _changeValue = 10;
+    private Coroutine _updateBar;
+    private Healthbar _healthbar;
 
     private void Start()
     {
+        _healthbar = GetComponent<Healthbar>();
         UpdateText();
     }
 
@@ -30,6 +31,7 @@ public class HPtext : MonoBehaviour
         }
 
         UpdateText();
+        RestartCorrutine();
     }
     public void GetDamage()
     {
@@ -41,10 +43,21 @@ public class HPtext : MonoBehaviour
         }
 
         UpdateText();
+        RestartCorrutine();
     }
 
     private void UpdateText()
     {
         _tmpText.text = ($"{_currentHealth}/{_maxHealth}");
+    }
+
+    private void RestartCorrutine()
+    {
+        if (_updateBar != null)
+        {
+            StopCoroutine(_updateBar);
+        }
+
+        _updateBar = StartCoroutine(_healthbar.UpdateBar());
     }
 }
